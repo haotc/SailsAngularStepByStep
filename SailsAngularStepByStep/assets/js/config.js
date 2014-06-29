@@ -4,7 +4,8 @@
 var ApplicationConfiguration = (function () {
     var applicationModuleName = 'foodApp';
     var applicationModuleVendorDependencies = [
-        'ngResource'
+        'ngResource',
+        'ngRoute'
     ];
     var registerModule = function (moduleName) {
         angular.module(moduleName, []);

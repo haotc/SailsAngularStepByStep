@@ -1,54 +1,43 @@
-<div id="content" ng-controller="FoodController">
-    <table>
-        <thead>
-        <tr class="row">
-            <th>Name</th>
-            <th>Type</th>
-            <th>Expiration</th>
-            <th>Quantity</th>
-            <th>Percent Remaining</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr class="row" ng-repeat="f in food">
-            <td>{{f.name}}</td>
-            <td>{{f.type}}</td>
-            <td>{{f.expiration}}</td>
-            <td>{{f.quantity}}</td>
-            <td class="progress">
-                <div class="bar" style="width: {{f.percentRemaining}}%"
-            </td>
-        </tr>
-        </tbody>
-    </table>
-    <button ng-click="toggleForm()" ng-hide="isFormActive">Add One</button>
-    <button ng-click="toggleForm()" ng-show="isFormActive">Hide Form</button>
-    <form ng-show="isFormActive">
-        <hr/>
-        <label for="name">Name:</label>
-        <input name="name" ng-model="editableFood.name"/>
-        <br/>
+<div class="row">
+    <div class="col col-sm-12"><h2>Responsive</h2>
 
-        <label for="type">Type:</label>
-        <input name="type" ng-model="editableFood.type"/>
-        <br/>
-
-        <label for="expiration">Expiration</label>
-        <input name="expiration" ng-model="editableFood.expiration"/>
-        <br/>
-
-        <label for="quantity">Quantity</label>
-        <input name="quantity" ng-model="editableFood.quantity"/>
-        <br/>
-
-        <label for="percentRemaining">Percent Remaining</label>
-        <input name="percentRemaining" ng-model="editableFood.percentRemaining"/><br/>
-
-        <div class="span4 text-right">
-            <div class="row">
-                <button ng-click="toggleForm()">Cancel</button>
-                <button ng-click="addFood()">Add</button>
-            </div>
-        </div>
-    </form>
+        <p>In simple terms, a responsive web design figures out what resolution of
+            device it's being served on. Flexible grids then size correctly to fit
+            the screen. Mobile-first Bootstrap 3 is responsive.</p></div>
 </div>
+<hr>
+<div class="row">
+    <div class="col-sm-8"><h2>Lighweight</h2>
+
+        <p>The new Bootstrap 3 is a smaller build. The separate Bootstrap
+            base and responsive.css files have now been merged into one. There is no
+            more fixed grid, only fluid.</p></div>
+    <div class="col-sm-4"><img class="img-responsive" src="//placehold.it/220x180/666666/FFF"></div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-sm-4"><img class="img-responsive" src="//placehold.it/220x180/777777/FFF"></div>
+    <div class="col-sm-8"><h2>Large, Small or Tiny</h2>
+
+        <p>
+            The new fluid grid comes in 3 flavors, or actually sizes. The large grid <code>col-lg-*</code>
+            works exactly like the Bootstrap 2.x <code>span*</code> did.
+            There is also a small grid that is realized using the <code>col-sm-*</code> classes. This
+            smaller grid is ideal for smartphones and tablets.
+            Finally, there is the non-stacking tiny grid <code>col-*</code> that is intended for very small
+            screens less that 480px.
+        </p></div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-sm-8"><h2>A Playground</h2>
+
+        <p>
+            Bootply is a playground for Bootstrap. Designers and developers use Bootply to edit, design,
+            prototype, test and find examples that use Bootstrap 3.
+            Use Bootply to hand-code HTML, Javascript, CSS and drop in the Bootstrap classes. There is a
+            also a visual drag-and-drop builder that is perfect for wire-framing and mockups.
+        </p></div>
+    <div class="col-sm-4"><img class="img-responsive" src="//placehold.it/220x180/777777/FFF"></div>
+</div>
+<hr>
