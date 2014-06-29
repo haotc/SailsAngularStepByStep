@@ -1,0 +1,54 @@
+<div id="content" ng-controller="FoodController">
+    <table>
+        <thead>
+        <tr class="row">
+            <th>Name</th>
+            <th>Type</th>
+            <th>Expiration</th>
+            <th>Quantity</th>
+            <th>Percent Remaining</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="row" ng-repeat="f in food">
+            <td>{{f.name}}</td>
+            <td>{{f.type}}</td>
+            <td>{{f.expiration}}</td>
+            <td>{{f.quantity}}</td>
+            <td class="progress">
+                <div class="bar" style="width: {{f.percentRemaining}}%"
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <button ng-click="toggleForm()" ng-hide="isFormActive">Add One</button>
+    <button ng-click="toggleForm()" ng-show="isFormActive">Hide Form</button>
+    <form ng-show="isFormActive">
+        <hr/>
+        <label for="name">Name:</label>
+        <input name="name" ng-model="editableFood.name"/>
+        <br/>
+
+        <label for="type">Type:</label>
+        <input name="type" ng-model="editableFood.type"/>
+        <br/>
+
+        <label for="expiration">Expiration</label>
+        <input name="expiration" ng-model="editableFood.expiration"/>
+        <br/>
+
+        <label for="quantity">Quantity</label>
+        <input name="quantity" ng-model="editableFood.quantity"/>
+        <br/>
+
+        <label for="percentRemaining">Percent Remaining</label>
+        <input name="percentRemaining" ng-model="editableFood.percentRemaining"/><br/>
+
+        <div class="span4 text-right">
+            <div class="row">
+                <button ng-click="toggleForm()">Cancel</button>
+                <button ng-click="addFood()">Add</button>
+            </div>
+        </div>
+    </form>
+</div>
