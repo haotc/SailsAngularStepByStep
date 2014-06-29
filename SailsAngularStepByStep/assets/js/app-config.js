@@ -11,5 +11,3 @@ var ApplicationConfiguration = (function () {
         applicationModuleVendorDependencies: applicationModuleVendorDependencies
     };
 })();
-
-var Application = angular.module(ApplicationConfiguration.applicationModuleName, ApplicationConfiguration.applicationModuleVendorDependencies);
