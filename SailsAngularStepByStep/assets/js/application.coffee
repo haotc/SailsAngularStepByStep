@@ -11,19 +11,8 @@ Application.config ($routeProvider) ->
   ).when("/target",
     templateUrl: "views/target.html"
     controller: "targetController"
-  ).when("/signin",
-    templateUrl: "views/signin.html"
-    controller: "signinController"
-  ).when "/signup",
-    templateUrl: "views/signup.html"
-    controller: "signupController"
+  )
 
 Application.controller "homeController", ->
-
 Application.controller "targetController", ->
-
-Application.controller "signinController", ->
-
-Application.controller "signupController", ->
-
 Application.controller "todoController", ->
