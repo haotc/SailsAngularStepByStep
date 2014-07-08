@@ -2,11 +2,12 @@ module.exports =
   attributes:
     username:
       type: 'string',
-      require: true,
+      required: true,
       unique: true
     password:
       type: 'string',
-      require: true
+      required: true
+
   toJSON: ->
     obj = @toObject
     delete obj.password

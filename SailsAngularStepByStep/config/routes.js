@@ -23,22 +23,24 @@
 module.exports.routes = {
 
 
-  // Make the view located at `views/homepage.ejs` (or `views/homepage.jade`, etc. depending on your
-  // default view engine) your home page.
-  //
-  // (Alternatively, remove this and add an `index.html` file in your `assets` directory)
-  '/': {
-    view: 'homepage'
-  },
+    // Make the view located at `views/homepage.ejs` (or `views/homepage.jade`, etc. depending on your
+    // default view engine) your home page.
+    //
+    // (Alternatively, remove this and add an `index.html` file in your `assets` directory)
+    '/': {
+        view: 'homepage'
+    },
 
 
-  // Custom routes here...
-  'get /signin': 'AuthController.signin',
-  'post /signin': 'AuthController.process',
-  'post /signout': 'AuthController.signout',
+    // Custom routes here...
+    'get /signin': 'AuthController.signin',
+    'post /signin': 'AuthController.processSignin',
+    'post /signout': 'AuthController.signout',
 
-  // If a request to a URL doesn't match any of the custom routes above,
-  // it is matched against Sails route blueprints.  See `config/blueprints.js`
-  // for configuration options and examples.
+    'get /signup': 'AuthController.signup',
+    'post /signup': 'AuthController.processSignup',
+    // If a request to a URL doesn't match any of the custom routes above,
+    // it is matched against Sails route blueprints.  See `config/blueprints.js`
+    // for configuration options and examples.
 
 };

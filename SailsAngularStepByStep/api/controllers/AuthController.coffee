@@ -1,14 +1,13 @@
 passport = require('passport')
 module.exports =
-  login: (req, res) ->
+  signin: (req, res) ->
     res.view 'auth/signin'
     return
   
-  process: (req, res) ->
+  processSignin: (req, res) ->
     passport.authenticate('local', (err, user, info) ->
       if err or not user
         res.redirect '/signin'
-        return
       req.logIn user, (err) ->
         res.redirect('/signin') if err
         res.redirect '/'
@@ -16,9 +15,17 @@ module.exports =
     ) req, res
     return
   
-  logout: (req, res) ->
+  signout: (req, res) ->
     req.logout()
     res.send 'Signout successful'
     return
-	
+
+  signup: (req, res) ->
+    res.view 'auth/signup'
+
+  processSignup: (req, res) ->
+    User.create req.params.all(), (err, user) ->
+      return next(err) if err
+      res.json(user)
+
   _config: {}

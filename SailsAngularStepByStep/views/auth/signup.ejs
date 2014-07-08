@@ -1,0 +1,25 @@
+<link rel="stylesheet" href="/css/signup.css">
+<div class="authen-header">
+    <a href="/">
+        <img alt="Trello logo"
+             src="https://d2k1ftgv7pobq7.cloudfront.net/images/bd87ee916375920ae72dffadbb10d412/logo-blue-lg.png"/>
+    </a>
+</div>
+<form class="form-signup" role="form" action="/signup" method="post">
+    <h2 class="form-signin-heading">Sign up</h2>
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input class="form-control" name="username" placeholder="Username" autofocus=""/>
+    </div>
+    <div class="form-group">
+        <label for="username">Password</label>
+        <input class="form-control" name="password" placeholder="Password" type="password"/>
+    </div>
+    <button class="btn btn-success" type="submit">Sign up</button>
+    <div class="form-group">
+        Or sign in with
+        <a href="/auth/google" class="undecorated-link">
+            <img src="/img/google.png" style="width: 70px;"/>
+        </a>
+    </div>
+</form>
