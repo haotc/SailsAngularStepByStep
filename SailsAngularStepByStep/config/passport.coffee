@@ -13,9 +13,9 @@ passport.use new LocalStrategy (username, password, done) ->
     return done(err) if err
     if not user
       return done null, false, message: 'Incorrect user'
-    if password is not user.password
+    unless password is user.password
       return done null, false, message: 'Invalid password'
-    return done null, user  	 
+    done null, user
 
 module.exports = express:
   customMiddleware: (app) ->

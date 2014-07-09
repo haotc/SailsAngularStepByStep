@@ -7,11 +7,10 @@ module.exports =
   processSignin: (req, res) ->
     passport.authenticate('local', (err, user, info) ->
       if err or not user
-        res.redirect '/signin'
+        return res.view('auth/signin', message:'failed')
       req.logIn user, (err) ->
-        res.redirect('/signin') if err
+        return res.view('auth/signin', message:'failed') if err
         res.redirect '/'
-      return
     ) req, res
     return
   
