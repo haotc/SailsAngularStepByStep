@@ -27,10 +27,7 @@ module.exports.routes = {
     // default view engine) your home page.
     //
     // (Alternatively, remove this and add an `index.html` file in your `assets` directory)
-    '/': {
-        view: 'homepage'
-    },
-
+    'get /': 'HomeController.index',
 
     // Custom routes here...
     'get /signin': 'AuthController.signin',
