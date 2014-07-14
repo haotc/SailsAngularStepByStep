@@ -51,9 +51,9 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
-            <ul class="nav nav-sidebar">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#target">Target</a></li>
+            <ul class="nav nav-sidebar" ng-controller="navController">
+                <li ng-class="{active: isActive('/')}"><a ng-href="#">Home</a></li>
+                <li ng-class="{active: isActive('/target')}"><a ng-href="#target">Target</a></li>
                 <li><a href="#todo">Todo</a></li>
                 <li><a href="#timer">Timer</a></li>
                 <li><a href="#analytic">Analytic</a></li>

@@ -13,7 +13,13 @@ Application.config ($routeProvider) ->
     controller: "targetController"
   )
 
+Application.controller "navController", ($scope, $location) ->
+  $scope.isActive = (route) ->
+    console.log(route)
+    console.log($location.path())
+    return $location.path() is route
+  return
+
 Application.controller "homeController", ->
-  
 Application.controller "targetController", ->
 Application.controller "todoController", ->
