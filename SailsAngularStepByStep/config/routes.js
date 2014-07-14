@@ -32,7 +32,7 @@ module.exports.routes = {
     // Custom routes here...
     'get /signin': 'AuthController.signin',
     'post /signin': 'AuthController.processSignin',
-    'post /signout': 'AuthController.signout',
+    'get /signout': 'AuthController.signout',
 
     'get /signup': 'AuthController.signup',
     'post /signup': 'AuthController.processSignup',

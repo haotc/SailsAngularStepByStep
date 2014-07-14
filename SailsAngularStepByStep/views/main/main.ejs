@@ -8,36 +8,12 @@
 <script src="/js/application.js"></script>
 
 <style>
-    @media (min-width: 979px) {
 
-        #midCol.affix-top {
-            position: fixed;
-            width: 265px;
-            margin-right: 10px;
-
-        }
-
-        #midCol.affix {
-            position: static;
-            width: 100%;
-        }
-
-    }
-
-    @media (min-width: 767px) {
-        .affix, .affix-top {
-            position: fixed;
-        }
-    }
-
-    #sidebar {
-        width: 10%;
-    }
 </style>
 
 <!-- Fixed navbar -->
 <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <div class="container">
+    <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                 <span class="sr-only">Toggle navigation</span>
@@ -53,9 +29,18 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <ul class="nav pull-right" id="authen">
-                <a class="btn btn-primary" href="/signin">Sign in</a>
-                <a class="btn btn-success" href="/signup">Sign up</a>
+            <ul id="userAccess" class="nav navbar-nav pull-right">
+                <!--<li><a class="btn btn-primary" href="/signin">Sign in</a></li>
+                <li><a class="btn btn-success" href="/signup">Sign up</a></li>-->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown"><%= user.username %><span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">Profile</a></li>
+                        <li><a href="#">Settings</a></li>
+                        <li class="divider"></li>
+                        <li><a href="/signout">Sign out</a></li>
+                    </ul>
+                </li>
             </ul>
         </div>
         <!--/.nav-collapse -->
@@ -63,11 +48,11 @@
 </div>
 
 <!-- Content -->
-<div class="container">
+<div class="container-fluid">
     <div class="row">
-        <div class="col-sm-2">
-            <ul id="sidebar" class="nav nav-stacked affix">
-                <li><a href="#" class="list-group-item active">Home</a></li>
+        <div class="col-sm-3 col-md-2 sidebar">
+            <ul class="nav nav-sidebar">
+                <li class="active"><a href="#">Home</a></li>
                 <li><a href="#target">Target</a></li>
                 <li><a href="#todo">Todo</a></li>
                 <li><a href="#timer">Timer</a></li>
@@ -75,7 +60,7 @@
                 <li><a href="#archived">Archived</a></li>
             </ul>
         </div>
-        <div id="content" class="col-sm-10">
+        <div class="col-sm-9 col-md-10 col-sm-offset-3 col-md-offset-2 main">
             <div ng-view></div>
         </div>
     </div>

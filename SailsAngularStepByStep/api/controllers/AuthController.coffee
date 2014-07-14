@@ -16,8 +16,7 @@ module.exports =
   
   signout: (req, res) ->
     req.logout()
-    res.send 'Signout successful'
-    return
+    res.redirect '/'
 
   signup: (req, res) ->
     res.view 'auth/signup'

@@ -14,5 +14,6 @@ Application.config ($routeProvider) ->
   )
 
 Application.controller "homeController", ->
+  
 Application.controller "targetController", ->
 Application.controller "todoController", ->
